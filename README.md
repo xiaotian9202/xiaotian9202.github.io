@@ -1,8 +1,8 @@
-## Welcome to GitHub Pages
+## 林饕 | LinT
 
-You can use the [editor on GitHub](https://github.com/Edwardlin-zlt/Edwardlin-zlt.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+非常高兴能够收到[ThoughtWorks](https://www.thoughtworks.com/) 的非计软开Offer，希望能在Thoughtworks的培养下成为一名出色的软件开发工程师。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+我是深大建筑与城市规划2020届研究生，一直对Coding有着强烈的兴趣和热情。对科技敬畏，并希望自己能够对这个日新月异的领域有更深刻的理解和认识, 能够使用代码让生活变得更加简单智能。
 
 ### Markdown
 
