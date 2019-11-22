@@ -1,0 +1,65 @@
+/*Start of zyc's part:
+link-** means css for 连接菜单
+head-** means css for 文章列表头条展示
+*/
+.head-timeline {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    color: darkgrey;
+}
+
+.head-subheads {
+    font-size: 18px;
+    color:gray;
+    margin: 0 0 10px 0;
+    }
+
+.head-blog-link {
+    color: blue;
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+}    
+
+.head-h2 {margin:0}
+
+.head-image {
+    width: 100%;
+    margin: 0;
+}
+
+.head-box {
+    height: 40%;
+    width: 40%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.link-div-inline { 
+    display: inline-table;
+    }
+
+/*    
+body {
+    background-image:url("https://pic4.zhimg.com/1b7b489b49ca91a10fe6d0979e2eb465_r.jpg");
+    background-repeat:no-repeat;
+}
+*/
+
+.linklink-box {
+    width: 16%;
+    height: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.link-smaller-img {
+    width: 100px;
+    padding: 10px 20px 10px 20px;
+}
+.link-box {
+    text-align: center;
+    width: 140px;
+}
+/*End of zyc's part*/
