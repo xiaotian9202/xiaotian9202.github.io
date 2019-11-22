@@ -82,3 +82,20 @@ body {
 }
 /*End of zyc's part*/
 
+
+/*backgrond Image*/
+.back {
+    background-image: url(../images/backImage.jpg);
+    width:40%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float:left;
+}
+.content {
+    background-color: #FFA500;
+    overflow-y: auto;
+    widows: 60%;
+    height:100%;
+}
+/* end of yxt part*/
