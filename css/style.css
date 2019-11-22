@@ -16,6 +16,31 @@ html, body{
   background-repeat: no-repeat;
 }
 
+/* left side */
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+  background-color: white;
+}
+
+/* user-info */
+.user-info{
+  width: 100%;
+  height: 30%;
+}
+
+.app-links {
+  width: 100%;
+}
+
+.head-box {
+  width: 100%;
+  height: 40%;
+}
+
 /*Start of zyc's part:
 link-** means css for 连接菜单
 head-** means css for 文章列表头条展示
