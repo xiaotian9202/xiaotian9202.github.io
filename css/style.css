@@ -16,6 +16,31 @@ html, body{
   background-repeat: no-repeat;
 }
 
+/* left side */
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+  background-color: white;
+}
+
+/* user-info */
+.user-info{
+  width: 100%;
+  height: 30%;
+}
+
+.app-links {
+  width: 100%;
+}
+
+.head-box {
+  width: 100%;
+  height: 40%;
+}
+
 /*Start of zyc's part:
 link-** means css for 连接菜单
 head-** means css for 文章列表头条展示
@@ -82,20 +107,88 @@ body {
 }
 /*End of zyc's part*/
 
+=======
+*{
+  margin: 0;
+  padding: 0;
+}
 
-/*backgrond Image*/
-.back {
-    background-image: url(../images/backImage.jpg);
-    width:40%;
-    height:100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    float:left;
+html, body{
+  width: 100%;
+  height: 100%;
 }
-.content {
-    background-color: #FFA500;
-    overflow-y: auto;
-    widows: 60%;
-    height:100%;
+
+.main{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/bg.jpg);
+  background-repeat: no-repeat;
 }
-/* end of yxt part*/
+
+/*Start of zyc's part:
+link-** means css for 连接菜单
+head-** means css for 文章列表头条展示
+*/
+.head-timeline {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    color: darkgrey;
+}
+
+.head-subheads {
+    font-size: 18px;
+    color:gray;
+    margin: 0 0 10px 0;
+    }
+
+.head-blog-link {
+    color: blue;
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+}    
+
+.head-h2 {margin:0}
+
+.head-image {
+    width: 100%;
+    margin: 0;
+}
+
+.head-box {
+    height: 40%;
+    width: 40%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.link-div-inline { 
+    display: inline-table;
+    }
+
+/*    
+body {
+    background-image:url("https://pic4.zhimg.com/1b7b489b49ca91a10fe6d0979e2eb465_r.jpg");
+    background-repeat:no-repeat;
+}
+*/
+
+.linklink-box {
+    width: 16%;
+    height: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.link-smaller-img {
+    width: 30%;
+    padding: 10px 20px 10px 20px;
+}
+.link-box {
+    text-align: center;
+    width: 140px;
+}
+/*End of zyc's part*/
+
