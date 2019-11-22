@@ -106,65 +106,74 @@ link-** means css for 连接菜单
 head-** means css for 文章列表头条展示
 */
 .head-timeline {
-    font-size: 15px;
+    font-size: 12px;
     margin: 0 0 10px 0;
     color: darkgrey;
 }
 
 .head-subheads {
     font-size: 18px;
-    color:gray;
+    color: white;
     margin: 0 0 10px 0;
     }
 
 .head-blog-link {
-    color: blue;
+    color: #1E90FF;
     font-size: 15px;
     margin: 5px 0 5px 0;
 }    
 
-.head-h2 {margin:0}
+.head-h1 {margin:0}
 
 .head-image {
-    width: 100%;
+    width: 75%;
+    height: 70%;
     margin: 0;
 }
 
 .head-box {
-    height: 40%;
-    width: 40%;
-    border-width: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 50%;
+    border-width: 0px;
     border-style: solid;
     border-color: black;
 }
 
-.link-div-inline { 
-    display: inline-table;
-    }
-
-/*    
-body {
-    background-image:url("https://pic4.zhimg.com/1b7b489b49ca91a10fe6d0979e2eb465_r.jpg");
-    background-repeat:no-repeat;
-}
-*/
-
-.linklink-box {
-    width: 16%;
-    height: 50%;
-    border-width: 5px;
+.link-app-link {
+    width: 77%;
+    height: 60%;
+    margin-top: 10%;
+    border-width: 0px;
     border-style: solid;
     border-color: black;
 }
 
 .link-smaller-img {
-    width: 30%;
-    padding: 10px 20px 10px 20px;
+    width: 50%;
+    padding: 15px 20px 10px 20px;
 }
-.link-box {
+.link-box-left {
     text-align: center;
     width: 140px;
+    display: inline-table;
+    margin: 1% 5% 1% 20%;
 }
+
+.link-icon-text {
+  color: white;
+}
+
+.link-box-right {
+  text-align: center;
+  width: 140px;
+  display: inline-table;
+  margin: 1% 20% 1% 5%;
+}
+
 /*End of zyc's part*/
 
 
@@ -185,73 +194,6 @@ html, body{
   background-image: url(../images/bg.jpg);
   background-repeat: no-repeat;
 }
-
-/*Start of zyc's part:
-link-** means css for 连接菜单
-head-** means css for 文章列表头条展示
-*/
-.head-timeline {
-    font-size: 15px;
-    margin: 0 0 10px 0;
-    color: darkgrey;
-}
-
-.head-subheads {
-    font-size: 18px;
-    color:gray;
-    margin: 0 0 10px 0;
-    }
-
-.head-blog-link {
-    color: blue;
-    font-size: 15px;
-    margin: 5px 0 5px 0;
-}    
-
-.head-h2 {margin:0}
-
-.head-image {
-    width: 100%;
-    margin: 0;
-}
-
-.head-box {
-    height: 40%;
-    width: 40%;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black;
-}
-
-.link-div-inline { 
-    display: inline-table;
-    }
-
-/*    
-body {
-    background-image:url("https://pic4.zhimg.com/1b7b489b49ca91a10fe6d0979e2eb465_r.jpg");
-    background-repeat:no-repeat;
-}
-*/
-
-.linklink-box {
-    width: 16%;
-    height: 50%;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black;
-}
-
-.link-smaller-img {
-    width: 30%;
-    padding: 10px 20px 10px 20px;
-}
-.link-box {
-    text-align: center;
-    width: 140px;
-}
-/*End of zyc's part*/
-
 
 /* Stories */
 .stories{
