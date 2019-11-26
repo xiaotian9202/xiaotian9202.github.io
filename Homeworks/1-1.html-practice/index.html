@@ -1,0 +1,135 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>html实战</title>
+    <link href="./style/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top">
+      <label>
+        <h2>统一建模语言理论测试</h2>
+      </label>
+      <span class="top-span">考试科目: 统一建模语言</span>
+      <span class="top-span">时间:100分钟</span>
+      <span class="top-span">得分: 100</span>
+
+      <form method="post" action="">
+        <span class="top-span">
+          <label for="classroom">班级: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input type="text" value="1班" id="classroom">
+        </span>
+
+        <span class="top-span">
+          <label for="stuId">学号:</label> 
+          <input type="text" value="001" id="stuId">
+        </span>
+
+        <span class="top-span">
+          <label for="name">姓名: </label>
+          <input type="text" value="王小二" id="name">
+        </span>
+      </form>
+    </div>
+    <div class="content">
+      <div class="one">
+        <h4>一、填空题 （每空5分，共20分）</h4>
+        <form class="context" method="post" action="">
+          <label>1. UML的中文全称是:</label>
+          <input type="text" value="统一建模语言"><br>
+          <label>2. 对象最突出的特征是: </label>
+          <input type="text" name="1" value="封装性">
+          <input type="text" name="2" value="继承性">
+          <input type="text" name="3" value="多态性">
+        </form>
+      </div>
+
+      <div class="two">
+          <h4>二、选择题（每题10分，共20分）</h4>
+          <form class="context" method="post" action="">
+            <label>1. UML与软件工程的关系是:</label><br>&nbsp;&nbsp;
+            <input type="radio" name="rd" value="(A)"  id="A">
+            <label for="A">(A) UML就是软件工程</label><br>&nbsp;&nbsp;
+    
+            <input type="radio" name="rd" value="(B)"  id="B" checked="checked">
+            <label for="B">(B) UML参与到软件工程中软件开发过程的几个阶段</label><br>&nbsp;&nbsp;
+    
+            <input type="radio" name="rd" value="(C)"  id="C">
+            <label for="C">(C) UML软件工程无关</label><br>&nbsp;&nbsp;
+    
+            <input type="radio" name="rd" value="(D)"  id="D">
+            <label for="D">(D) UML是软件工程的一部分</label><br>
+
+            <label>2. JAVA语言支持:</label><br>&nbsp;&nbsp;
+            <input type="radio" name="rd1" value="(A)" checked="checked"  id="A">
+            <label for="A">(A)单继承</label><br>&nbsp;&nbsp;
+
+            <input type="radio" name="rd2" value="(B)"  id="B">
+            <label for="B">(B) 多继承</label><br>&nbsp;&nbsp;
+
+            <input type="radio" name="rd3" value="(C)"  id="C">
+            <label for="C">(C) 单继承和多继承都支持</label><br>&nbsp;&nbsp;
+
+            <input type="radio" name="rd4" value="(D)" id="D">
+            <label for="D">(D) 单继承和多继承都不支持</label><br>
+          </form>
+      </div>
+
+      <div class="three">
+          <h4>三、选择题（每题10分，共20分）</h4>
+          <form class="context" method="POST" action="">
+            <label> 1. 用例的粒度分为以下哪三种:</label><br>&nbsp;&nbsp;&nbsp;
+
+            <input type="checkbox" name="cb1" value="(A)"  id="A" checked="checked">
+            <label for="A">(A) 概述级<br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox" name="cb2" value="(B)"  id="B" checked="checked">
+            <label for="B">(B) 需求级</label><br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox"  name="cb3" value="(C)" id="C">
+            <label for="C">(C) 用户目标级</label><br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox"  name="cb4" value="(D)"  id="D" checked="checked">
+            <label for="D">(D) 子功能级</label><br>
+    
+            <label>2. 类图由以下那三部分组成:</label><br>&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="cb1" value="(A)"  id="A" checked="checked">
+            <label for="A">(A) 名称(Name)</label><br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox" name="cb2" value="(B)"  id="B" checked="checked">
+            <label for="B">(B) 属性(Attribute)</label><br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox"  name="cb3" value="(C)"  id="C" checked="checked">
+            <label for="C">(C) 操作(Operation)</label><br>&nbsp;&nbsp;&nbsp;
+    
+            <input type="checkbox"  name="cb4"  id="D" value="(D)">
+            <label for="D">(D) 方法(Funtion)</label><br>
+          </form>
+      </div>
+
+      <div class="four">
+          <h4>四、判断题（每题10分，共20分）</h4>
+          <form class="context" method="POST" action="">
+            <label>1. 用例图只是用于和客户交通沟流的，用于确定需求。</label>
+            <input type="radio" name="right" value=" ">
+            <label>√</label>
+            <input type="radio" name="bad" value=" " checked="checked">
+            <label>×</label><br>
+            <label> 2. 在状态图中终止状态在一个状态图中允许有任意多个。</label>
+            <input type="radio" name=" " value=" "  checked="checked">
+            <label>√</label>
+            <input type="radio" name=" " value=" ">
+            <label>×</label><br>
+          </form>
+      </div>
+      <div class= "five">
+          <h4>五、简答题（每题20分，共20分）</h4>
+          <form class="context" method="POST" action="">
+            <label>1. 简述什么是模型以及模型的表现形状?</label><br>
+            <textarea class="tab" rows="10" cols="60">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式，可以是物理实体，可以是一种数学表达式。</textarea>
+          </form>
+      </div>
+      <input class="score" type="text" value="计算分数">
+    </div>
+  </body>
+</html>
