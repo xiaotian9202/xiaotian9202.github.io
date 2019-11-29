@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 550px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.nav {
+  height: 80px;
+  background-color: #32394A;
+  line-height: 80px;
+  border-radius: 5px;
+}
+
+a[class="return"] {
+  font-family: "icomoon";
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+  padding-left: 32px;
+}
+
+a[class="text"] {
+  font-size: 32px;
+  color: #D8DDE2;
+  text-decoration: none;
+  padding: 27px 246px 18px 36px;
+}
+
+a[class="shopcar"] {
+  font-family: "icomoon";
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+.banner {
+  height: 186px;
+  background: url('../image/story4.2.png') no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.radius {
+  position: relative;
+  left: 479px;
+  bottom: -156px;
+  background-color: transparent;
+  width: 44px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+li {
+  list-style: none;
+}
+
+.radius li {
+  float: left;
+    background-color: gray;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.radius .selected {
+  background-color: cornsilk;
+}
+
+.tag {
+  width: 550px;
+  height: 132px;
+  background-color: white;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+td a {
+  display: block;
+  width: 148px;
+  height: 40px;
+  border: 1px solid rgb(198, 203, 216);
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  line-height: 40px;
+  margin: 0 0 0 13px;
+}
+
+a[class="selected"] {
+  color: #FFFFFF;
+  background-color: red;
+}
+
+td a:hover {
+  color: #D8DDE2;
+  background-color: red;
+}
+
+.course-img{
+  float: left;
+  width: 230px;
+  height: 150px;
+}
+
+.course-img img {
+  width: 200px;
+  padding: 18px 15px;
+}
+
+.course-introduction {
+  float: left;
+  width: 320px;
+  height: 150px;
+}
+
+.course-introduction h4 {
+  padding: 18px 0 10px 15px;
+}
+
+.course-introduction p {
+  padding-left:15px;
+  color: #c6c6c6;
+}
+
+.course-info {
+  color: #c6c6c6;
+}
+
+.course-info span {
+  color: red;
+  margin-left: 15px;
+  margin-right: 70px;
+}
