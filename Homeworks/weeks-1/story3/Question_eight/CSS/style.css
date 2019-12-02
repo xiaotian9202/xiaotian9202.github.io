@@ -38,22 +38,22 @@ a:active {
   margin-left: 100px;
   width: 0px;
   height: 0px;
-  border: 100px solid;
-  border-color: black white white white;
+  border: 100px solid transparent;
+  border-top-color: black;
 }
 
 .left-triangle {
   display: inline-block;
   width: 0px;
   height: 0px;
-  border: 100px solid;
-  border-color: white white white black;
+  border: 100px solid transparent;
+  border-left-color: black;
 }
 
 .right-triangle {
   display: inline-block;
   width: 0px;
   height: 0px;
-  border: 100px solid;
-  border-color: white black white white;
+  border: 100px solid transparent;
+  border-right-color:black;
 }
