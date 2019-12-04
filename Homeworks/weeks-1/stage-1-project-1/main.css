@@ -222,7 +222,8 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: darkblue;
+    min-width: 320px;
+    background: #39719e;
 }
 
 .main .top .right .right-top-right .events-title {
