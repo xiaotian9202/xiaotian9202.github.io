@@ -1,0 +1,368 @@
+body {
+    background-color: black;
+    width: 95%;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    background-image: url("./images/starfield-banner.jpg");
+    background-size: auto;
+    width: 95%;
+    height: 130px;
+    z-index: 999;
+}
+
+.header .logo {
+    flex: 2;
+}
+
+.header .nav {
+    display: flex;
+    flex-direction: column;
+    min-width: 776px;
+    flex: 8;
+}
+
+.nasa-menu {
+    position: relative;
+    display: flex;
+    flex: 7;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+
+.sub-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 3;
+    background-color: #555555;
+}
+
+.nasa-menu a {
+    position: relative;
+    display: block;
+    padding: 0 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.nasa-menu a span {
+    line-height: 91px;
+}
+
+.nasa-menu a:nth-last-of-type(-n+6)::before
+ {
+    position: absolute;
+    top: 30%;
+    left: -1px;
+    box-sizing: border-box;
+    content: "";
+    width: 2px;
+    height: 40%;
+    background-color: rgb(105, 104, 104);
+}
+
+.sub-menu a {
+    position: relative;
+    display: flex;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.sub-menu a span {
+    font-size: 15px;
+    line-height: 39px;
+}
+
+.sub-menu a:nth-last-of-type(-n+8)::before {
+    position: absolute;
+    top: 20%;
+    left: -5px;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 60%;
+    background-color: #888;
+}
+
+.header .search {
+    position: relative;
+    display: flex;
+    flex: 2;
+    height: 100%;
+}
+
+.form-box {
+    position: absolute;
+    top: 26px;
+    left: 18px;
+}
+
+.form-text {
+    width: 110px;
+    padding: 12px 30px 12px 10px;
+    border: none;
+    outline: none;
+    background-color: #333333;
+}
+
+.form-submit {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    background-image: url("./images/search.svg");
+}
+
+.search .icon {
+    position: absolute;
+    top: 32px;
+    left: 170px;
+    width: 30px;
+    height: 30px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 130px;
+    width: 100%;
+    background-color: #000000;
+}
+
+.headline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 80px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.headline .tag {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "";
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #5d7fb9;
+}
+
+.headline .describe {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+.main .top .left img,
+.main .top .right .right-top-left img,
+.main .top .right .right-down a img,
+.main .center .center-right video,
+.main .center .center-center img,
+.main .center .center-left,
+.main .down .down-left1 img,
+.main .down .down-left2 img,
+.main .down .down-right1 img,
+.main .down .down-right2 img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .top {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    height: 640px;
+}
+
+.main .top .left {
+    position: relative;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.main .top .right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 640px;
+    margin-bottom: 10px;
+}
+
+.main .top .right .right-top {
+    flex: 1;
+    height: 320px;
+    display: flex;
+}
+
+.main .top .right .right-down {
+    position: relative;
+    flex: 1;
+    margin-top: 10px;
+}
+
+.main .top .right .right-top-left {
+    position: relative;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.main .top .right .right-top-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: darkblue;
+}
+
+.main .top .right .right-top-right .events-title {
+    height: 30px;
+}
+
+.main .top .right .right-top-right .events-info {
+    flex: 8;
+}
+
+.main .top .right .right-top-right .events-title h4 {
+    margin: 10px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.main .top .right .right-top-right .events-info a {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.main .top .right .right-top-right .events-info a p {
+    margin: 2px 5px;
+}
+
+.main .top .right .right-top-right .events-foot {
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+}
+
+.main .top .right .right-top-right .events-foot a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.main .top .right .right-top-right .events-foot a span {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.main .center {
+    display: flex;
+    width: 100%;
+    height: 320px;
+    margin-top: 10px;
+}
+
+.main .center .center-left,
+.main .center .center-center,
+.main .center .center-right {
+    position: relative;
+    flex: 2;
+    margin: 0 10px 0 0;
+}
+
+.main .center .center-center {
+    flex: 4;
+}
+
+.main .down {
+    display: flex;
+    width: 100%;
+    height: 320px;
+    margin-top: 10px;
+}
+
+.main .down .down-left1,
+.main .down .down-left2,
+.main .down .down-right1,
+.main .down .down-right2 {
+    position: relative;
+    flex: 1;
+    margin: 10px 10px 0 0;
+}
+
+.main .down .down-right2 {
+    margin: 10px 0 0 0;
+}
+
+.main .main-foot {
+    width: 100%;
+    height: 40px;
+    margin-top: 24px;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgb(48, 51, 187);
+}
+
+.main .main-foot a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.footer::before {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 74px;
+    height: 60px;
+    content: "";
+    background-image: url("./images/nasa-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer .foot-logo-info {
+    flex: 2;
+    font-size: 12px;
+    text-indent: 76px;
+    color: #ffffff;
+}
+
+.footer .foot-logo-info p {
+    margin: 4px 0;
+}
+
+.footer .foot-menu {
+    flex: 8;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.footer .foot-menu a {
+    text-decoration: none;
+    margin-right: 26px;
+    color: #2779b1;
+}
