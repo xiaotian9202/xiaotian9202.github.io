@@ -1,138 +1,218 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>html实战</title>
-  </head>
-  <body>
-    <form>
-      <audio src="./video/bgm.mp3" autoplay loop></audio>
-      <h2>统一建模语言理论测试</h2>
-      <table >
-        <tr>
-          <td>考试科目：</td>
-          <td>统一建模语言</td>
-          <td>时间：</td>
-          <td>100分钟</td>
-          <td>得分:　</td>
-          <td>100</td>
-        </tr>
-        <tr>
-            <td>班级：</td>
-            <td>
-              <input type="text" value="1班"/>
-            </td>
-            <td>学号：</td>
-            <td>
-              <input type="text" value="001"/>
-            </td>
-            <td>姓名:　</td>
-            <td>
-              <input type="text" value="王小闹"/>
-            </td>
-        </tr>
-      </table>
-      <h4>一、填空题 （每空5分，共20分）</h4>
-      <ol>
-        <li>UML的中文全称是:
-          <input type="text" value="统一建模语言"/>
-        </li>
-        <li>对象最突出的特征是:
-          <input type="text" name="1" value="封装性"/>
-          <input type="text" name="2" value="继承性"/>
-          <input type="text" name="3" value="多态性"/>
-        </li>
-      </ol>
 
-      <h4>二、选择题（每题10分，共20分）</h4>
-      <ol>
-        <li>UML与软件工程的关系是:<br/>
-          <p>
-            <input type="radio" name="rd" value="(A)"  id="A"/>
-            <label for="A">(A) UML就是软件工程</label><br/>
+<head>
+  <meta charset="utf-8">
+  <title>html实战</title>
+</head>
 
-            <input type="radio" name="rd" value="(B)"  id="B" checked="checked"/>
-            <label for="B">(B) UML参与到软件工程中软件开发过程的几个阶段</label><br/>
+<body>
+  <audio src="./video/bgm.mp3" autoplay loop alt="This is a background music"></audio>
+  <form>
+    <h2>统一建模语言理论测试</h2>
+    <table>
+      <tr>
+        <td>
+          <span>考试科目：</span>
+        </td>
+        <td>
+          <span>统一建模语言</span>
+        </td>
+        <td>
+          <span>时间：</span></td>
+        <td>
+          <span>100分钟</span>
+        </td>
+        <td>
+          <span>得分:　</span>
+        </td>
+        <td>
+          <span>100</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>班级：</span>
+        </td>
+        <td>
+          <label>
+            <input type="text" value="1班" />
+          </label>
+        </td>
+        <td>学号：</td>
+        <td>
+          <label for="">
+            <input type="text" value="001" />
+          </label>
+        </td>
+        <td>姓名:　</td>
+        <td>
+          <label for="">
+            <input type="text" value="王小闹" />
+          </label>
+        </td>
+      </tr>
+    </table>
+    <h4>一、填空题 （每空5分，共20分）</h4>
+    <ol>
+      <li>
+        <label>
+          <span>UML的中文全称是:</span>
+          <input type="text" value="统一建模语言" />
+        </label>
+      </li>
+      <li>
+        <label>
+          <span>对象最突出的特征是:</span>
+          <input type="text" name="1" value="封装性" />
+          <input type="text" name="2" value="继承性" />
+          <input type="text" name="3" value="多态性" />
+        </label>
+      </li>
+    </ol>
 
-            <input type="radio" name="rd" value="(C)"  id="C"/>
-            <label for="C">(C) UML软件工程无关</label><br>
+    <h4>二、选择题（每题10分，共20分）</h4>
+    <ol>
+      <li>
+        <span>UML与软件工程的关系是:</span>
+        <br />
+        <br />
+        <label for="a">
+          <input type="radio" name="rd" id="a" />
+          <span>(A) UML就是软件工程</span>
+        </label>
+        <br />
+        <label for="b">
+          <input type="radio" name="rd" id="b" checked="checked" />
+          <span>(B) UML参与到软件工程中软件开发过程的几个阶段</span>
+        </label>
+        <br />
+        <label for="c">
+          <input type="radio" name="rd" id="c" />
+          <span>(C) UML软件工程无关</span>
+        </label>
+        <br />
+        <label for="d">
+          <input type="radio" name="rd" id="d" />
+          <span>(D) UML是软件工程的一部分</span>
+        </label>
+        <br />
+        <br />
+      </li>
+      <li>
+        <span>语言支持:</span>
+        <br />
+        <br />
+        <label for="aa">
+          <input type="radio" name="rd1" checked="checked" id="aa" />
+          <span>(A)单继承</span>
+        </label>
+        <br />
+        <label for="bb">
+          <input type="radio" name="rd1" id="bb" />
+          <span>(B) 多继承</span>
+        </label>
+        <br />
+        <label for="cc">
+          <input type="radio" name="rd1" id="cc" />
+          <span>(C) 单继承和多继承都支持</span>
+        </label>
+        <br />
+        <label for="dd">
+          <input type="radio" name="rd1" id="dd" />
+          <span>(D) 单继承和多继承都不支持</span>
+        </label>
+        <br />
+      </li>
+    </ol>
+    <h4>三、选择题（每题10分，共20分）</h4>
+    <ol>
+      <li>
+        <span>用例的粒度分为以下哪三种:</span>
+        <br />
+        <br />
+        <label for="aaa">
+          <input type="checkbox" name="cb" id="aaa" checked="checked" />
+          <span>(A) 概述级</span>
+        </label>
+        <br />
+        <label for="bbb">
+          <input type="checkbox" name="cb" id="bbb" checked="checked" />
+          <span>(B) 需求级</span>
+        </label>
+        <br />
+        <label for="ccc">
+          <input type="checkbox" name="cb" id="ccc" />
+          <span>(C) 用户目标级</span>
+        </label>
+        <br />
+        <label for="ddd">
+          <input type="checkbox" name="cb" id="ddd" checked="checked" />
+          <span>(D) 子功能级</span>
+        </label>
+        <br />
+        <br />
+      </li>
+      <li>
+        <span>类图由以下那三部分组成:</span>
+        <br />
+        <br />
+        <label for="aaaa">
+          <input type="checkbox" name="cb1" id="aaaa" checked="checked" />
+          <span>(A) 名称(Name)</span>
+        </label>
+        <br />
+        <label for="bbbb">
+          <input type="checkbox" name="cb1" id="bbbb" checked="checked" />
+          <span>(B) 属性(Attribute)</span>
+        </label>
+        <br />
+        <label for="cccc">
+          <input type="checkbox" name="cb1" id="cccc" checked="checked" />
+          <span>(C) 操作(Operation)</span>
+        </label>
+        <br />
+        <label for="dddd">
+          <input type="checkbox" name="cb1" id="dddd" />
+          <span>(D) 方法(Funtion)</span>
+        </label>
+        <br />
+      </li>
+    </ol>
+    <h4>四、判断题（每题10分，共20分）</h4>
+    <ol>
+      <li>
+        <span>用例图只是用于和客户交通沟流的，用于确定需求。</span>
+        <label for="right">
+          <input type="radio" name="rd2" id="right" />
+          <span>√</span>
+        </label>
+        <label for="bad">
+          <input type="radio" name="rd2" checked="checked" id="bad" />
+          <span>×</span>
+        </label>
+      </li>
+      <li>
+        <span>在状态图中终止状态在一个状态图中允许有任意多个。</span>
+        <label for="right2">
+          <input type="radio" name="rd3" id="right2" checked="checked" />
+          <span>√</span>
+        </label>
+        <label for="bad2">
+          <input type="radio" name="rd3" id="bad2" />
+          <span>×</span>
+        </label>
+      </li>
+    </ol>
+    <h4>五、简答题（每题20分，共20分）</h4>
+    <ol>
+      <li>
+        <p>简述什么是模型以及模型的表现形状?</p>
+        <textarea rows="10" cols="100">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式，可以是物理实体，可以是一种数学表达式。</textarea>
+      </li>
+    </ol>
+    <input type="submit" value="计算分数" />
+  </form>
+</body>
 
-            <input type="radio" name="rd" value="(D)"  id="D"/>
-            <label for="D">(D) UML是软件工程的一部分</label>
-          </p>
-        </li>
-        <li>JAVA语言支持:<br/>
-          <p>
-            <input type="radio" name="rd1" value="(A)" checked="checked"  id="AA"/>
-            <label for="AA">(A)单继承</label><br/>
-
-            <input type="radio" name="rd1" value="(B)"  id="BB"/>
-            <label for="BB">(B) 多继承</label><br/>
-
-            <input type="radio" name="rd1" value="(C)"  id="CC"/>
-            <label for="CC">(C) 单继承和多继承都支持</label><br/>
-
-            <input type="radio" name="rd1" value="(D)" id="DD"/>
-            <label for="DD">(D) 单继承和多继承都不支持</label>
-          </p>
-        </li>
-      </ol>
-      <h4>三、选择题（每题10分，共20分）</h4>
-      <ol>
-        <li>用例的粒度分为以下哪三种:<br/>
-          <p>
-            <input type="checkbox" name="cb1" value="(A)"  id="AAA" checked="checked"/>
-            <label for="AAA">(A) 概述级<br/>
-    
-            <input type="checkbox" name="cb2" value="(B)"  id="BBB" checked="checked"/>
-            <label for="BBB">(B) 需求级</label><br/>
-    
-            <input  type="checkbox" name="cb3" value="(C)" id="CCC"/>
-            <label for="CCC">(C) 用户目标级</label><br/>
-    
-            <input  type="checkbox" name="cb4" value="(D)"  id="DDD" checked="checked"/>
-            <label for="DDD">(D) 子功能级</label><br/>
-          </p>
-        </li>
-        <li>类图由以下那三部分组成:<br/>
-          <p>
-            <input type="checkbox" name="cb1" value="(A)"  id="AAAA" checked="checked"/>
-            <label for="AAAA">(A) 名称(Name)</label><br/>
-    
-            <input type="checkbox" name="cb2" value="(B)"  id="BBBB" checked="checked"/>
-            <label for="BBBB">(B) 属性(Attribute)</label><br/>
-    
-            <input  type="checkbox" name="cb3" value="(C)"  id="CCCC" checked="checked"/>
-            <label for="CCCC">(C) 操作(Operation)</label><br/>
-    
-            <input  type="checkbox" name="cb4"  id="DDDD" value="(D)"/>
-            <label for="DDDD">(D) 方法(Funtion)</label>
-          </p>
-        </li>
-      </ol>
-      <h4>四、判断题（每题10分，共20分）</h4> 
-      <ol>
-        <li>用例图只是用于和客户交通沟流的，用于确定需求。
-          <input type="radio" name="rd2" value=" " id="right"/>
-          <label for="right1">√</label>
-          <input type="radio" name="rd2" value=" " checked="checked" id="bad"/>
-          <label for="bad1">×</label>
-        </li>
-        <li>在状态图中终止状态在一个状态图中允许有任意多个。
-          <input type="radio" name="rd3" value=" "   id="right2" checked="checked"/>
-          <label for="right2">√</label>
-          <input type="radio" name="rd3" value=" " id="bad2"/>
-          <label for="bad2">×</label>
-        </li>
-      </ol>
-      <h4>五、简答题（每题20分，共20分）</h4>
-      <ol>
-        <li> 
-          <p>简述什么是模型以及模型的表现形状?</p>
-          <textarea rows="10" cols="100">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式，可以是物理实体，可以是一种数学表达式。</textarea>
-        </li>
-      </ol>
-      <input type="submit"  value="计算分数"/>
-    </form>
-  </body>
-</html> 
+</html>
