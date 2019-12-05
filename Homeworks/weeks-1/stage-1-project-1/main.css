@@ -1,3 +1,29 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?a4h3rr');
+  src:  url('fonts/icomoon.eot?a4h3rr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?a4h3rr') format('truetype'),
+    url('fonts/icomoon.woff?a4h3rr') format('woff'),
+    url('fonts/icomoon.svg?a4h3rr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  position: absolute;
+  right: 0;
+  font-family: 'icomoon' !important;
+  font-size: 26px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
     background-color: black;
     width: 95%;
@@ -232,6 +258,7 @@ body {
 
 .main .top .right .right-top-right .events-info {
     flex: 8;
+    overflow: hidden;
 }
 
 .main .top .right .right-top-right .events-title h4 {
