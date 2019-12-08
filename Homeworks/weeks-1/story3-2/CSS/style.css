@@ -3,146 +3,98 @@
   padding: 0;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-}
-
+html,
 body {
   width: 100%;
   height: 100%;
 }
 
 .main {
+  width: 346px;
+  margin: 0 auto;
+  font-family: "Indie Flower";
+}
+
+.drop {
+  position: relative;
   width: 100%;
-  height: 100%;
-}
-
-.c {
-  width: 376px;
-  margin: auto;
-}
-
-.saint-petersburg {
-  margin-top: 50px;
   height: 70px;
+  margin: 50px 0 30px 0;
   background-color: red;
   border-radius: 5px;
 }
 
-.info {
-  position: relative;
-  left: 18px;
-  display: inline-block;
-  width: 334px;
-  height: 70px;
-  font-size: 36px;
-  font-family: "Gill Sans";
+.drop span {
+  padding-left: 20px;
   color: white;
-  line-height: 55px;
+  font-size: 2rem;
+  line-height: 70px;
 }
 
 
-.info::after {
+.drop::before {
   position: absolute;
-  left: 302px;
-  top: 25px;
+  right: 20px;
+  top: 32px;
   content: "";
   width: 0;
   height: 0;
-  border-top: 20px solid white;
-  border-right: 13px solid red;
-  border-left: 13px solid red;
+  border: 14px solid transparent;
+  border-top-color: white;
 } 
 
-.down {
-  height: 242px;
-}
-
-.space {
-  position: relative;
-  height: 30px;
-}
-
-.space::after {
+.drop::after {
   position: absolute;
-  right: 32px;
-  top: 10px;
+  right: 20px;
+  bottom: -30px;
   content: "";
   width: 0;
   height: 0;
-  border-bottom: 20px solid red;
-  border-right: 13px solid white;
-  border-left: 13px solid white;
+  border: 14px solid transparent;
+  border-bottom-color: red;
 }
 
-.like {
-  height: 70px;
-  margin-bottom: 1px;
-  background-image: url(../image/b.png);
-  background-repeat: no-repeat;
-  background-position: 19px -63px;
-  background-clip: content-box;
+.list {
   background-color: red;
-  line-height: 70px;
-  font-size: 36px;
-  font-family: "Gill Sans";
+  border-radius: 5px;
+}
+
+.list ul {
+  list-style: none;
+}
+
+.list ul .first-row,
+.list ul .second-row {
+  border-bottom: 2px solid white
+}
+
+.list ul li a {
+  text-decoration: none;
   color: white;
-  text-indent: 90px;
-  border-radius: 5px 5px 0 0;
-  list-style: none;
 }
 
-.favorites {
-  height: 70px;
-  margin-bottom: 1px;
-  background-image: url(../image/b.png);
-  background-repeat: no-repeat;
-  background-position: -75px 10px;
-  background-clip: content-box;
-  background-color: red;
-  line-height: 70px;
-  font-size: 36px;
-  font-family: "Gill Sans";
-  color: white;
-  text-indent: 90px;
-  list-style: none;
-}
-
-.discuss {
-  height: 70px;
-  margin-bottom: 1px;
-  background-color: red;
-  line-height: 70px;
-  font-size: 36px;
-  font-family: "Gill Sans";
-  list-style: none;
-  border-radius: 0 0 5px 5px;
-}
-
-.discuss::before {
-  position: relative;
-  top: 0;
-  left: 0;
+.list ul li a span {
   display: inline-block;
-  content: "";
-  width: 80px;
   height: 70px;
-  background-image: url(../image/b.png);
-  background-repeat: no-repeat;
-  background-position: 19px 10px;
-  background-clip: content-box;
+  font-size: 2rem;
+  vertical-align: top;
+  line-height: 70px;
 }
 
-.adjust {
-  position: relative;
-  top: -21px;
-  left: 0;
-  color: white;
-  text-decoration: none;
+.background-img {
+  display: inline-block;
+  width: 70px;
+  background-image: url("../image/b.png");
 }
 
-a {
-  color: white;
-  text-decoration: none;
+.heart-img {
+  background-position: 10px -62px;
+}
+
+.star-img {
+  background-position: -84px 10px;
+}
+
+.chat-img {
+  background-position: 10px 10px;
 }
