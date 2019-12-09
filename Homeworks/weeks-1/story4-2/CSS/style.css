@@ -3,11 +3,19 @@
   padding: 0;
 }
 
-html {
-  width: 100%;
-  height: 100%;
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?utryh9');
+  src:  url('fonts/icomoon.eot?utryh9#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?utryh9') format('truetype'),
+    url('fonts/icomoon.woff?utryh9') format('woff'),
+    url('fonts/icomoon.svg?utryh9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
+html,
 body {
   width: 100%;
   height: 100%;
@@ -20,51 +28,53 @@ body {
 }
 
 .nav {
+  display: flex;
   height: 80px;
   background-color: #32394A;
   line-height: 80px;
-  border-radius: 5px;
 }
 
 a[class="return"] {
+  width: 60px;
   font-family: "icomoon";
   font-size: 32px;
   color: white;
   text-decoration: none;
-  padding-left: 32px;
+  text-align: center;
 }
 
 a[class="text"] {
+  flex-grow: 1;
   font-size: 32px;
   color: #D8DDE2;
   text-decoration: none;
-  padding: 27px 246px 18px 36px;
 }
 
 a[class="shopcar"] {
+  width: 60px;
   font-family: "icomoon";
   font-size: 32px;
   color: white;
   text-decoration: none;
+  text-align: center;
 }
 
 .banner {
+  position: relative;
   height: 186px;
   background: url('../image/story4.2.png') no-repeat top center;
   background-size: 100% 100%;
 }
 
 .radius {
-  position: relative;
-  left: 479px;
-  bottom: -156px;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
   background-color: transparent;
-  width: 44px;
-  height: 14px;
   border-radius: 2px;
 }
 
-li {
+.banner ul li {
   list-style: none;
 }
 
@@ -82,15 +92,17 @@ li {
 }
 
 .tag {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 550px;
   height: 132px;
+  padding-top: 24px;
   background-color: white;
-  padding-top: 1px;
-  padding-bottom: 1px;
 }
 
-td a {
-  display: block;
+.tag a {
+  display: inline-block;
   width: 148px;
   height: 40px;
   border: 1px solid rgb(198, 203, 216);
@@ -99,7 +111,6 @@ td a {
   text-decoration: none;
   color: #000000;
   line-height: 40px;
-  margin: 0 0 0 13px;
 }
 
 a[class="selected"] {
@@ -107,9 +118,15 @@ a[class="selected"] {
   background-color: red;
 }
 
-td a:hover {
+.tag a:hover {
   color: #D8DDE2;
   background-color: red;
+}
+
+.course-i,
+.course-ii,
+.course-iii {
+  overflow: hidden;
 }
 
 .course-img{
