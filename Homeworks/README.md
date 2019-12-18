@@ -11,6 +11,7 @@
 ### Chapter 3
 
 - [仓库](https://github.com/xiaotian9202/xiaotian9202.github.io/tree/master/Homeworks/chapter3)
-- [DOM(一).login](https://xiaotian9202.github.io/Homeworks/chapter3/story2.1/)
-- [DOM(二).dragBox](https://xiaotian9202.github.io/Homeworks/chapter3/story2.2/)
+- [DOM(1.1).login](https://xiaotian9202.github.io/Homeworks/chapter3/story2.1/)
+- [DOM(1.2).dragBox](https://xiaotian9202.github.io/Homeworks/chapter3/story2.2/)
+- [DOM(2)](https://xiaotian9202.github.io/Homeworks/chapter3/story3/)
 

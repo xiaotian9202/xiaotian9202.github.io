@@ -1,16 +1,25 @@
 
 var greenBox = document.querySelector(".green-box");
 var yellowBox = document.querySelector(".yellow-box");
-var bigBox = document.querySelector(".big-box");
+var document = document.querySelector(".big-box");
+var flag = false;
+var x = 0;
+var y = 0;
+document.addEventListener("mousemove", move);
 
-greenBox.addEventListener("mousedown", function(e) {
-  var x = e.pageX - greenBox.offsetLeft;
-  var y = e.pageY - greenBox.offsetTop;
+greenBox.addEventListener("mousedown", function (e) {
+  flag = true;
+  x = e.pageX - greenBox.offsetLeft;
+  y = e.pageY - greenBox.offsetTop;
+})
 
-  bigBox.addEventListener('mousemove', move)
-  function move(e) {
-    if (e.pageX - x < 0)
-    {
+document.addEventListener("mouseup", function () {
+  flag = false;
+})
+
+function move(e) {
+  if (flag) {
+    if (e.pageX - x < 0) {
       greenBox.style.left = "0px";
       if (e.pageY - y < 0) {
         greenBox.style.top = "0px";
@@ -53,18 +62,10 @@ greenBox.addEventListener("mousedown", function(e) {
         && e.pageX - x < 900
         && e.pageY - y > 540
         && e.pageY - y < 700) {
-          yellowBox.style.backgroundColor = "blue";
-        } else {
+        yellowBox.style.backgroundColor = "blue";
+      } else {
         yellowBox.style.backgroundColor = "yellow";
       }
     }
-
-    function changeColor() {
-      this.style.backgroundColor = "blue";
-    }
   }
-
-  bigBox.addEventListener("mouseup", function() {
-    bigBox.removeEventListener("mousemove", move);
-  })
-})
+}
