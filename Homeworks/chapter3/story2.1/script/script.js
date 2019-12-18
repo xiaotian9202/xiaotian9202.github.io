@@ -1,35 +1,25 @@
-var userName = document.getElementById('user-name');
-var pwd = document.getElementById("pwd");
 
-function getFocus() {
+function getCursor() {
   if (this.value === "Please enter password") {
-    this.value = "";
     this.type = "password";
   }
-
-  if (this.value === "Please enter user name") {
-    this.value = "";
-  }
-
+  this.value = "";
   this.style.color = "#000000";
 }
 
-function loseFocus() {
-  if (this.value === "") {
+function loseCursor() {
+  if (this.type === "text" && this.value === "") {
     this.value = "Please enter user name";
+  } else if (this.type === "password" && this.value === "") {
+    this.type = "text";
+    this.value = "Please enter password";
   }
-  this.style.color = "#a09c9c"
+  this.style.color = "#a09c9c";
 }
 
-userName.addEventListener("focus", getFocus);
-userName.addEventListener("blur", loseFocus);
-pwd.addEventListener("focus", getFocus);
-pwd.addEventListener("blur", loseFocus);
-
-var btn = document.querySelector("button");
-var message = document.querySelector(".message");
-
-function getClick() {
+// The operation of submit
+function submitInfo() {
+  var message = document.querySelector(".message");
   if (userName.value === "123" && pwd.value === "123") {
     message.className = "message right";
     message.innerHTML = "log in...";
@@ -40,4 +30,13 @@ function getClick() {
   }
 }
 
-btn.addEventListener('click', getClick);
+var userName = document.getElementById('user-name');
+userName.addEventListener("focus", getCursor);
+userName.addEventListener("blur", loseCursor);
+
+var password = document.getElementById("pwd");
+password.addEventListener("focus", getCursor);
+password.addEventListener("blur", loseCursor);
+
+var btn = document.querySelector("button");
+btn.addEventListener('click', submitInfo);
