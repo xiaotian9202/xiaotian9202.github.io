@@ -157,7 +157,7 @@ var check = document.querySelectorAll(".check");
 for (var i = 0, lens = check.length; i < lens; i++) {
   check[i].addEventListener("click", function() {
     var flag = true;
-    for (var j = 0; j < lens; j++) {
+    for (var j = 0, lens = check.length; j < lens; j++) {
       if (!check[j].checked) {
         flag = false;
         break;
