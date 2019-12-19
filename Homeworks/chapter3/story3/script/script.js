@@ -153,12 +153,12 @@ checkAll.addEventListener("click", function() {
 })
 
 // click checkbox of check
-var check = document.querySelectorAll(".check");
-for (var i = 0, lens = check.length; i < lens; i++) {
-  check[i].addEventListener("click", function() {
+var checks = document.querySelectorAll(".check");
+for (var i = 0, lens = checks.length; i < lens; i++) {
+  checks[i].addEventListener("click", function() {
     var flag = true;
-    for (var j = 0, lens = check.length; j < lens; j++) {
-      if (!check[j].checked) {
+    for (var j = 0, lens = checks.length; j < lens; j++) {
+      if (!checks[j].checked) {
         flag = false;
         break;
       }
