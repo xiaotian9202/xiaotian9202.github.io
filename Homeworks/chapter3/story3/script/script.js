@@ -43,83 +43,34 @@ var carProducts = [
   }
 ]
 
-var tbody = document.querySelector("tbody");
-for (var i = 0, len = carProducts.length; i < len; i++) {
-  var tr = document.createElement("tr");
-
-  var td1 = document.createElement("td");
-  td1.style.border = "1px solid rgb(219, 211, 211)"
-  var check = document.createElement("input");
-  check.className = "check";
-  check.type = "checkbox";
-  check.checked = carProducts[i].checked ? "checked" : "";
-  td1.appendChild(check);
-  tr.appendChild(td1);
-
-  var td2 = document.createElement("td");
-  td2.style.border = "1px solid rgb(219, 211, 211)"
-  td2.innerHTML = carProducts[i].name;
-  tr.appendChild(td2);
-
-  var td3 = document.createElement("td");
-  td3.style.border = "1px solid rgb(219, 211, 211)"
-  td3.className = "price";
-  td3.innerHTML = carProducts[i].price;
-  tr.appendChild(td3);
-
-  var td4 = document.createElement("td");
-  td4.style.border = "1px solid rgb(219, 211, 211)"
-  var minusBtn = document.createElement("input");
-  minusBtn.className = "plus-minus btn-style";
-  minusBtn.type = "button";
-  minusBtn.value = "-";
-  td4.appendChild(minusBtn);
-  var span = document.createElement("span");
-  span.className = "nums"
-  span.innerHTML = carProducts[i].count;
-  span.style.margin = "0 5px";
-  td4.appendChild(span);
-  var plusBtn = document.createElement("input");
-  plusBtn.className = "plus-minus btn-style";
-  plusBtn.type = "button";
-  plusBtn.value = "+";
-  td4.appendChild(plusBtn);
-  tr.appendChild(td4);
-
-  var td5 = document.createElement("td");
-  td5.style.border = "1px solid rgb(219, 211, 211)"
-  td5.className = "total";
-  var value = carProducts[i].price * carProducts[i].count;
-  td5.innerHTML= value;
-  tr.appendChild(td5);
-
-  tbody.appendChild(tr);
+function getType(val) {
+  return val ? "checked" : "";
 }
 
-var tr = document.createElement("tr");
-var td = document.createElement("td");
-td.style.border = "1px solid rgb(219, 211, 211)"
-var span = document.createElement("span");
-span.innerHTML = "全选";
-span.style.marginRight = "5px";
-td.appendChild(span);
-var input = document.createElement("input");
-input.className = "checkAll"
-input.type = "checkbox";
-td.appendChild(input);
-tr.appendChild(td);
-
-var td = document.createElement("td");
-tr.appendChild(td);
-var td = document.createElement("td");
-td.className = "message";
-td.innerHTML = "共计3件商品，210￥";
-tr.appendChild(td);
-var td = document.createElement("td");
-tr.appendChild(td);
-var td = document.createElement("td");
-tr.appendChild(td);
-tbody.appendChild(tr);
+var tbody = document.querySelector("tbody");
+for (var i = 0, len = carProducts.length; i < len; i++) {
+  tbody.innerHTML += "<tr id=\"item"+ carProducts[i].id + "\"></tr>";
+  var id = "#item" + carProducts[i].id;
+  var tr = document.querySelector(id);
+  tr.innerHTML = "<td>"
+  + "<input class=\"check\" type=\"checkbox\"" + getType(carProducts[i].checked) + " / >" 
+  + "</td>" 
+  + "<td>" + carProducts[i].name + "</td>" 
+  + "<td class=\"price\">" + carProducts[i].price + "</td>"
+  + "<td>" 
+  + "<input class=\"plus-minus btn-style\" type=\"button\" value=\"-\" />"
+  + "<span class=\"nums\">" + carProducts[i].count + "</span>"
+  + "<input class=\"plus-minus btn-style\" type=\"button\" value=\"+\" />"
+  + "</td>"
+  + "<td class=\"total\">" + carProducts[i].price * carProducts[i].count +"</td>";
+}
+tbody.innerHTML += "<td><span>全选</span>"
+  + "<input class=\"checkAll\" type=\"checkbox\"/>"
+  + "</td>"
+  + "<td></td>"
+  + "<td></td>"
+  + "<td></td>"
+  + "<td class=\"message\">共计3件商品，210￥</td>";
 
 // get total money of pre items
 function getTotalPrice(itemCount, itemPrice) {
