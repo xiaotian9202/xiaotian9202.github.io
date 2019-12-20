@@ -70,7 +70,10 @@ tbody.innerHTML += "<td><span>全选</span>"
   + "<td></td>"
   + "<td></td>"
   + "<td></td>"
-  + "<td class=\"message\">共计3件商品，210￥</td>";
+  + "<td class=\"message\">共计" 
+  + "<span class=\"totalNums\">3</span>件商品，"
+  + "<span class=\"totalMoney\">210</span>￥" 
+  + "</td>";
 
 // get total money of pre items
 function getTotalPrice(itemCount, itemPrice) {
@@ -93,51 +96,49 @@ function changeMessage() {
   message.innerHTML = "共计" + totalItems + "件商品," + totalMoney + "￥";
 }
 
-// click checkbox of checkAll
-var checkAll = document.querySelector(".checkAll");
-checkAll.addEventListener("click", function() {
-  var items = document.querySelectorAll(".check");
-  for (var i = 0, lens = items.length; i < lens; i++) {
-    items[i].checked = checkAll.checked;
-  }
-  changeMessage();
-})
-
-// click checkbox of check
-var checks = document.querySelectorAll(".check");
-for (var i = 0, lens = checks.length; i < lens; i++) {
-  checks[i].addEventListener("click", function() {
-    var flag = true;
-    for (var j = 0, lens = checks.length; j < lens; j++) {
-      if (!checks[j].checked) {
-        flag = false;
-        break;
-      }
+function isCheckAll() {
+  var checks = document.querySelectorAll(".check");
+  var checkAll = document.querySelector(".checkAll");
+  var flag = true;
+  for (var i = 0, lens = checks.length; i < lens; i++) {
+    if (!checks[i].checked) {
+      flag = false;
     }
-    checkAll.checked = flag;
-    changeMessage();
-  })
+  }
+  checkAll.checked = flag;
 }
 
-// click button of the plus and minus
-var btns = document.querySelectorAll(".plus-minus");
-for (var k = 0, lens = btns.length; k < lens; k++) {
-  btns[k].addEventListener("click", function() {
-    var nodeOfTr = this.parentNode.parentNode;
-    if (this.value === "-") {
-      var itemNum = parseInt(this.nextElementSibling.innerHTML) - 1;
+var table = document.querySelector("table");
+table.addEventListener("click", function(e) {
+  if (e.target.className === "check") {
+    isCheckAll();
+    changeMessage();
+  }
+
+  if (e.target.className === "checkAll") {
+    var checks = document.querySelectorAll(".check");
+    for (var i = 0, lens = checks.length; i < lens; i++) {
+      checks[i].checked = e.target.checked;
+    }
+    changeMessage();
+  }
+
+  if (e.target.className === "plus-minus btn-style") {
+    var nodeOfTr = e.target.parentNode.parentNode;
+    if (e.target.value === "-") {
+      var itemNum = parseInt(e.target.nextElementSibling.innerHTML) - 1;
       if (itemNum <= 0) {
         nodeOfTr.parentNode.removeChild(nodeOfTr);
       } else {
-        this.nextElementSibling.innerHTML = itemNum;
+        e.target.nextElementSibling.innerHTML = itemNum;
       }
-    } else if (this.value === "+") {
-      var itemNum = parseInt(this.previousElementSibling.innerHTML) + 1;
-      this.previousElementSibling.innerHTML = itemNum;
+    } else if (e.target.value === "+") {
+      var itemNum = parseInt(e.target.previousElementSibling.innerHTML) + 1;
+      e.target.previousElementSibling.innerHTML = itemNum;
     }
     var itemPrice = parseFloat(nodeOfTr.querySelector(".price").innerHTML);
     var totalPrice = getTotalPrice(itemNum, itemPrice);
     nodeOfTr.querySelector(".total").innerHTML = totalPrice;
     changeMessage();
-  })
-}
+  }
+})
