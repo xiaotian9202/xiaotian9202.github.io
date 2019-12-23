@@ -1,71 +1,42 @@
-
 var greenBox = document.querySelector(".green-box");
 var yellowBox = document.querySelector(".yellow-box");
-var document = document.querySelector(".big-box");
+var bigBox = document.querySelector(".big-box");
+var maxGreenBoxOffsetLeft = bigBox.clientWidth - greenBox.clientWidth;
+var maxGreenBoxOffsetTop = bigBox.clientHeight - greenBox.clientHeight;
 var flag = false;
 var x = 0;
 var y = 0;
-document.addEventListener("mousemove", move);
 
+document.addEventListener("mousemove", moveGreenBox);
 greenBox.addEventListener("mousedown", function (e) {
   flag = true;
   x = e.pageX - greenBox.offsetLeft;
   y = e.pageY - greenBox.offsetTop;
 })
-
 document.addEventListener("mouseup", function () {
   flag = false;
 })
 
-function move(e) {
+function moveGreenBox(e) {
   if (flag) {
-    if (e.pageX - x < 0) {
-      greenBox.style.left = "0px";
-      if (e.pageY - y < 0) {
-        greenBox.style.top = "0px";
-      } else if (e.pageY - y > 720) {
-        greenBox.style.top = "720px";
-      } else {
-        greenBox.style.top = e.pageY - y + "px"
-      }
-    } else if (e.pageX - x > 920) {
-      greenBox.style.left = "920px";
-      if (e.pageY - y < 0) {
-        greenBox.style.top = "0px";
-      } else if (e.pageY - y > 720) {
-        greenBox.style.top = "720px";
-      } else {
-        greenBox.style.top = e.pageY - y + "px"
-      }
-    } else if (e.pageY - y < 0) {
-      greenBox.style.top = "0px";
-      if (e.pageX - x < 0) {
-        greenBox.style.left = "0px";
-      } else if (e.pageX - x > 920) {
-        greenBox.style.left = "920px";
-      } else {
-        greenBox.style.left = e.pageX - x + "px"
-      }
-    } else if (e.pageY - y > 720) {
-      greenBox.style.top = "720px";
-      if (e.pageX - x < 0) {
-        greenBox.style.left = "0px";
-      } else if (e.pageX - x > 920) {
-        greenBox.style.left = "920px";
-      } else {
-        greenBox.style.left = e.pageX - x + "px"
-      }
-    } else {
-      greenBox.style.left = e.pageX - x + "px"
-      greenBox.style.top = e.pageY - y + "px"
-      if (e.pageX - x > 740
-        && e.pageX - x < 900
-        && e.pageY - y > 540
-        && e.pageY - y < 700) {
-        yellowBox.style.backgroundColor = "blue";
-      } else {
-        yellowBox.style.backgroundColor = "yellow";
-      }
-    }
+   greenBox.style.left = Math.max(Math.min(e.pageX - x, maxGreenBoxOffsetLeft), 0) + "px";
+   greenBox.style.top = Math.max(Math.min(e.pageY - y, maxGreenBoxOffsetTop), 0) + "px";
+   changeColorOfYellowBox();
+  }
+}
+
+function changeColorOfYellowBox() {
+  var minLeft = yellowBox.offsetLeft - yellowBox.clientWidth;
+  var maxLeft = yellowBox.offsetLeft + yellowBox.clientWidth;
+  var minTop = yellowBox.offsetTop - yellowBox.clientHeight;
+  var maxTop = yellowBox.offsetTop + yellowBox.clientHeight;
+  console.log()
+  if (greenBox.offsetLeft > minLeft 
+    && greenBox.offsetLeft < maxLeft
+    && greenBox.offsetTop > minTop
+    && greenBox.offsetTop < maxTop) {
+      yellowBox.style.backgroundColor = "rgb(15, 48, 233)";
+  } else {
+    yellowBox.style.backgroundColor = "rgb(233, 211, 15)";
   }
 }
