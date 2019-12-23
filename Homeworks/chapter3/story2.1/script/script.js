@@ -1,3 +1,12 @@
+var userName = document.getElementById('user-name');
+var password = document.getElementById("pwd");
+var btn = document.querySelector("button");
+
+userName.addEventListener("focus", getCursor);
+userName.addEventListener("blur", loseCursor);
+password.addEventListener("focus", getCursor);
+password.addEventListener("blur", loseCursor);
+btn.addEventListener('click', submitInfo);
 
 function getCursor() {
   if (this.value === "Please enter password") {
@@ -29,14 +38,3 @@ function submitInfo() {
     pwd.value = "";
   }
 }
-
-var userName = document.getElementById('user-name');
-userName.addEventListener("focus", getCursor);
-userName.addEventListener("blur", loseCursor);
-
-var password = document.getElementById("pwd");
-password.addEventListener("focus", getCursor);
-password.addEventListener("blur", loseCursor);
-
-var btn = document.querySelector("button");
-btn.addEventListener('click', submitInfo);
