@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.header p {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.header .input {
+  width: 336px;
+  height: 26px;
+}
+
+.header .add {
+  width: 52px;
+  height: 30px;
+  color:  rgb(252, 247, 248);
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(238, 16, 53);
+}
+
+.list {
+  margin: 20px 0 50px 20px;
+}
+
+.list li:nth-of-type(even){
+  background-color: rgb(226, 222, 223);
+}
+
+.list li input {
+  margin: 0 5px;
+}
+
+.add-line-through {
+  text-decoration: line-through;
+  color: rgb(194, 189, 191);
+}
+
+.footer {
+  margin: 10px 0 5px 0;
+}
+
+.footer ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+.footer ul li input{
+  font-size: 1.2rem;
+  color:  rgb(238, 16, 53);
+  border: none;
+  background-color: transparent;
+}
+
+.all {
+  margin: 0 20px 5px 108px;
+}
+
+.active {
+  margin: 0 20px 0 20px;
+}
+
+.complete {
+  margin-left: 20px;
+}
