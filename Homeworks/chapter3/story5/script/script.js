@@ -7,58 +7,40 @@ function initPage() {
     jsonToList("all");
   }
 
-  var main = document.querySelector(".main");
-  var input = document.querySelector(".input");
+  var header = document.querySelector(".main");
+  var footer = document.querySelector(".footer");
   var list = document.querySelector(".list");
+  var input = document.querySelector(".input")
   var flag = "all";
 
-  main.addEventListener("keyup", function (event) {
-    if (event.key === "Enter" && input.value.trim()) {
-      addOrStoreList(input, list, flag);
-    }
-  })
-
-  main.addEventListener("click", function (e) {
-    var targetEvent = e.target;
-    if (targetEvent.className === "add" && input.value.trim()) {
-      addOrStoreList(input, list, flag);
-    }
-
-    if (targetEvent.className === "check") {
-      var checked = "";
-      if (!targetEvent.checked) {
-        targetEvent.parentElement.className = "";
-      } else {
-        checked = "checked";
-        targetEvent.parentElement.className = "add-line-through";
-      }
-      var text = targetEvent.nextElementSibling.innerHTML;
-      var data = JSON.parse(localStorage.jsonData);
-      for (var i = 0, lens = data.length; i < lens; i++) {
-        if (data[i].text === text) {
-          data[i].checked = checked;
-          break;
-        }
-      }
-      localStorage.jsonData = JSON.stringify(data);
-    }
-
-    if (targetEvent.className === "all"
-      || targetEvent.className === "active"
-      || targetEvent.className === "complete") {
-      flag = targetEvent.className;
-      list.innerHTML = "";
-      jsonToList(flag);
-    }
-    })
+  header.addEventListener("keyup", function(e) {
+    addOrStoreList(e, list, input, flag);
+  });
+  header.addEventListener("click", function(e) {
+    addOrStoreList(e, list, input, flag);
+  });
+  list.addEventListener("click", changeStatuOfList);
+  footer.addEventListener("click", function(e) {
+    if (event.target.className === "all"
+    || event.target.className === "active"
+    || event.target.className === "complete") {
+    flag = event.target.className;
+    list.innerHTML = "";
+    jsonToList(flag);
   }
+});
+}
 
-function addOrStoreList(input, list, flag) {
-  if (flag === "all" || flag === "active") {
-    addList(list, input.value.trim());
+function addOrStoreList(event, list, input, flag) {
+  if ((event.target.className === "add" || event.key === "Enter")
+    && input.value.trim()) {
+    if (flag === "all" || flag === "active") {
+      addList(list, input.value.trim());
+    }
+    storeDataToLocal(input.value.trim());
+    input.value = "";
   }
-  storeDataToLocal(input.value.trim());
-  input.value = "";
+  console.log(localStorage);
 }
 
 function storeDataToLocal(value) {
@@ -95,16 +77,46 @@ function jsonToList(flag) {
   var jsonData = JSON.parse(localStorage.jsonData);
 
   for (var k = 0, lens = jsonData.length; k < lens; k++) {
-    if (flag === "all") {
-      if (!jsonData[k].checked) {
-        addList(list, jsonData[k].text);
-      } else {
-        addList(list, jsonData[k].text, "add-line-through");
-      }
-    } else if (flag === "active" && (!jsonData[k].checked)) {
-      addList(list, jsonData[k].text);
-    } else if (flag === "complete" && jsonData[k].checked) {
-      addList(list, jsonData[k].text, "add-line-through");
+    switch (flag) {
+      case "all":
+        if (!jsonData[k].checked) {
+          addList(list, jsonData[k].text);
+        } else {
+          addList(list, jsonData[k].text, "add-line-through");
+        }
+        break;
+      case "active": 
+        if (!jsonData[k].checked) {
+          addList(list, jsonData[k].text);
+        }
+        break;
+      case "complete":
+        if (jsonData[k].checked) {
+          addList(list, jsonData[k].text, "add-line-through");
+        }
+        break;
     }
+  }
+}
+
+function changeStatuOfList(e) {
+  var targetEvent = e.target;
+  if (targetEvent.className === "check") {
+    var checked = "";
+    if (!targetEvent.checked) {
+      targetEvent.parentElement.className = "";
+    } else {
+      checked = "checked";
+      targetEvent.parentElement.className = "add-line-through";
+    }
+    var text = targetEvent.nextElementSibling.innerHTML;
+    var data = JSON.parse(localStorage.jsonData);
+    for (var i = 0, lens = data.length; i < lens; i++) {
+      if (data[i].text === text) {
+        data[i].checked = checked;
+        break;
+      }
+    }
+    localStorage.jsonData = JSON.stringify(data);
   }
 }
