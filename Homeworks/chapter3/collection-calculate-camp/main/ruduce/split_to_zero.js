@@ -20,4 +20,5 @@ function spilt_to_zero(number, interval) {
   return result;
 }
 
+
 module.exports = spilt_to_zero;
