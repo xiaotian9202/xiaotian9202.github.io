@@ -15,7 +15,7 @@ window.ajax = function (options) {
   }
 
   var xhr = new XMLHttpRequest();
-  options.data = options.data || "";
+  options.data = JSON.stringify(options.data) || null;
   options.method = options.method.toUpperCase();
 
   xhr.onreadystatechange = function () {
@@ -29,25 +29,6 @@ window.ajax = function (options) {
 }
 
   xhr.open(options.method, options.url, true);
-
-  switch (options.method) {
-    case "GET": 
-      xhr.send();
-      break;
-
-    case "POST":
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(options.data));
-      break;
-
-    case "PUT":
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(options.data));
-        break;
-  
-    case "DELETE":
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send();
-    break;
-  }
+  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.send(options.data);
 }
