@@ -1,59 +1,40 @@
 'use strict';
-var even_group_calculate_average = function(collection){
-  var arrOfEvenNumber = getArrOfEvenNUmberInEvenIndex(collection);
-  if (!arrOfEvenNumber.length) {
+var even_group_calculate_average = function (collection) {
+  if (!collection.length) {
+    return;
+  }
+
+  let arrEven = collection.filter((item, index) => {
+    if (index % 2) {
+      return item % 2 ? false : true;
+    }
+    return false;
+  });
+
+  if (!arrEven.length) {
     return [0];
   }
-  var arr = groupingByBit(arrOfEvenNumber);
-  var result = getAverageOfPerGroup(arr);
-  return result;
-};
 
-function getArrOfEvenNUmberInEvenIndex(collection) {
-  var arr = [];
-  for (var i = 1, lens = collection.length; i < lens; i += 2) {
-    if (!(collection[i] & 1))
-    arr.push(collection[i]);
-  }
-  return arr;
+  let groupResult = groupByBits(arrEven);
+  return getAverageOfgroups(groupResult);
 }
 
-function groupingByBit(arr) {
-  var arrOfADigit = [];
-  var arrOfTwoDigit = [];
-  var arrOfThreeDigit = [];
-
-  for (var i = 0, lens = arr.length; i < lens; i++) {
-    if (arr[i] >= 100 && arr[i] <= 999) {
-      arrOfThreeDigit.push(arr[i]);
-    } else if (arr[i] >= 10 && arr[i] <= 99) {
-      arrOfTwoDigit.push(arr[i]);
-    } else if (arr[i] >= 0 && arr[i] <= 9) {
-      arrOfADigit.push(arr[i]);
-    }
-  }
-  return [arrOfADigit, arrOfTwoDigit, arrOfThreeDigit];
-}
-
-function getAverageOfPerGroup(arr) {
-  var result = [];
-  for (var i = 0, lens = arr.length; i < lens; i++) {
-    if (arr[i].length) {
-      var average = getAverage(arr[i]);
-      result.push(average);
-    }
+function groupByBits(arr) {
+  arr.sort((a, b) => a - b);
+  let result = {};
+  for (let i of arr) {
+    i.toString().length in result ? result[i.toString().length].push(i) : result[i.toString().length] = [i];
   }
   return result;
 }
 
-function getAverage(arr) {
-  var sum = 0;
-  var count = 0;
-  for (var i = 0, lens = arr.length; i < lens; i++) {
-    sum += arr[i];
-    count++;
+function getAverageOfgroups(objs) {
+  let result = [];
+  for (let element in objs) {
+    let sum = objs[element].reduce((sum, item) => sum += item, 0);
+    result.push(sum / objs[element].length);
   }
-  return sum / count;
+  return result;
 }
 
 module.exports = even_group_calculate_average;

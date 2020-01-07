@@ -1,29 +1,16 @@
 'use strict';
+let myFunc = require('../src/lib.js');
 
 function get_integer_interval_2(number_a, number_b) {
   //在这里写入代码
-  var result = [];
-  var temp = number_a;
-  if (temp < number_b) {
-    while (temp !== number_b) {
-      if (!(temp & 1)) {
-        result.push(temp);
-      }
-      temp++;
-    }
-  } else if (temp > number_b) {
-    while (temp !== number_b) {
-      if (!(temp & 1)) {
-        result.push(temp);
-      }
-      temp--;
-    }
+  let arr = [];
+  if (number_a <= number_b) {
+    arr = myFunc.getArrOfInterval(number_a, number_b, "increasing");
+  } else {
+    arr = myFunc.getArrOfInterval(number_a, number_b, "decreasing");
   }
 
-  if (!(temp & 1)) {
-    result.push(temp);
-  } 
-  return result;
+  return arr.filter(item => (!(item % 2)));
 }
 
 module.exports = get_integer_interval_2;

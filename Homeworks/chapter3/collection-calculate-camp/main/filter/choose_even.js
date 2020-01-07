@@ -2,13 +2,10 @@
 
 function choose_even(collection) {
   //在这里写入代码
-  var result = [];
-  for (var i = 0, lens = collection.length; i < lens; i++) {
-    if (!(collection[i] & 1)) {
-      result.push(collection[i]);
-    }
+  if (!collection.length) {
+    return;
   }
-  return result;
+  return collection.filter(item => !(item % 2));
 }
 
 module.exports = choose_even;

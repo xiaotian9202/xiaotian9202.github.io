@@ -1,23 +1,10 @@
 function create_updated_collection(collection_a, object_b) {
   //在这里写入代码
-  for (var i = 0, lens = collection_a.length; i < lens; i++) {
-    if (isFind(collection_a[i].key, object_b.value)) {
-      collection_a[i].count -= Math.floor(collection_a[i].count / 3);
-    }
-  }
-  return collection_a;
-}
-
-function isFind(element, collection) {
-  var lens = collection.length;
-  var bool = false;
-  for (var j = 0; j < lens; j++) {
-    if (element === collection[j]) {
-      bool = true;
-      break;
-    }
-  }
-  return bool;
+  let bSet = new Set(object_b.value);
+  return collection_a.map(item => {
+    bSet.has(item.key) ? item.count -= parseInt(item.count / 3) : item.count;
+    return item;
+  })
 }
 
 module.exports = create_updated_collection;

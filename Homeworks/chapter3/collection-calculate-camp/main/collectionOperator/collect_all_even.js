@@ -2,19 +2,10 @@
 
 function collect_all_even(collection) {
   //在这里写入代码
-  var lens = collection.length;
-  var result = [];
-  if (!lens) {
-    return result;
+  if (!collection.length) {
+    return;
   }
-
-
-  for (var i = 0; i < lens; i++) {
-    if ((collection[i] & 1) === 0) {
-      result.push(collection[i]);
-    }
-  }
-  return result;
+  return collection.filter(item => !(item % 2));
 }
 
 module.exports = collect_all_even;

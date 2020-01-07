@@ -2,22 +2,12 @@
 
 function get_intersection(collection_a, collection_b) {
   //在这里写入代码
-  var lensA = collection_a.length;
-  var lensB = collection_b.length;
-  var result = [];
-  if (lensA === 0 || lensB === 0) {
-    return result;
+  if (!collection_a.length || !collection_b.length) {
+    return;
   }
 
-  for (var i = 0; i < lensB; i++) {
-    for (var j = 0; j < lensA; j++) {
-      if (collection_a[j] === collection_b[i]) {
-        result.push(collection_b[i]);
-      }
-    }
-  }
-
-  return result;
+  let aSet = new Set(collection_a);
+  return Array.from(new Set(collection_b.filter(item => aSet.has(item))));
 }
 
 module.exports = get_intersection;

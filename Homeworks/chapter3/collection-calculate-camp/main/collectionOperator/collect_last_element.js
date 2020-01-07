@@ -2,12 +2,10 @@
 
 function collect_last_element(collection) {
   //在这里写入代码
-  var lens = collection.length;
-  if (!lens) {
+  if (!collection.length) {
     return;
-  } 
-  var result = collection.pop();
-  return result;
+  }
+  return collection.pop();
 }
 
 module.exports = collect_last_element;

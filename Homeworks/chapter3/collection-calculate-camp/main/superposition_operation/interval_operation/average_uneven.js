@@ -3,15 +3,9 @@
 function average_uneven(collection) {
 
   //在这里写入代码
-  var sum = 0;
-  var count = 0;
-  for (var i = 0, lens = collection.length; i < lens; i++) {
-    if ((collection[i] & 1)) {
-      sum += collection[i];
-      count++;
-    }
-  }
-  return sum / count;
+  let collection_odd = collection.filter(item => item % 2);
+  let sum = collection_odd.reduce((sum, item) => sum += item, 0);
+  return sum / collection_odd.length;
 }
 
 module.exports = average_uneven;

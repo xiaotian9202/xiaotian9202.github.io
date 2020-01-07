@@ -2,12 +2,13 @@
 
 function collect_max_number(collection) {
   //在这里写入代码
-  var result = -100000;
-  for (var i = 0, lens = collection.length; i < lens; i++) {
-    if (collection[i] > result) {
-      result = collection[i];
-    }
+  if (!collection.length) {
+    return;
   }
+  let result = collection.reduce((pre, cur) => {
+    return pre < cur ? cur : pre;
+  }, collection[0])
+
   return result;
 }
 

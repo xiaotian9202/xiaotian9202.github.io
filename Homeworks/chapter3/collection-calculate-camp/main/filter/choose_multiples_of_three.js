@@ -2,13 +2,10 @@
 
 function choose_multiples_of_three(collection) {
   //在这里写入代码
-  var result = [];
-  for (var i = 0, lens = collection.length; i < lens; i++) {
-    if (collection[i] % 3 === 0) {
-      result.push(collection[i]);
-    }
+  if (!collection.length) {
+    return;
   }
-  return result;
+  return collection.filter(item => !(item % 3));
 }
 
 module.exports = choose_multiples_of_three;

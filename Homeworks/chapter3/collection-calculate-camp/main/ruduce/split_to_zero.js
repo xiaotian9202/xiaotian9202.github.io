@@ -2,21 +2,15 @@
 
 function spilt_to_zero(number, interval) {
   //在这里写入代码
-  var result = [];
-  result.push(number);
-  if (interval === 0.2) {
-    while (number !== 0) {
-      number -= interval;
-      number = Math.round(number * 100) / 100;
-      result.push(number);
-    }
-  } else if (interval === 0.3) {
-    while (number > 0) {
-      number -= interval;
-      number = Math.round(number * 100) / 100;
-      result.push(number);
-    }
+  let bitsOfNumber = number.toString().split('.')[1] ? number.toString().split('.')[1].length : 0;
+  let bitsOfInterval = interval.toString().split('.')[1] ? interval.toString().split('.')[1].length : 0;
+  let base = Math.pow(10, Math.max(bitsOfInterval, bitsOfNumber));
+  let result = [];
+  while (number > -interval) {
+    result.push(number);
+    number = (number * base - interval * base) / base;
   }
+
   return result;
 }
 

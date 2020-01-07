@@ -1,47 +1,28 @@
 function count_same_elements(collection) {
   //在这里写入代码
-  var set = choose_no_repeat_element(collection);
-  var result = getCount(set, collection);
-  return result;
-}
+  let arr = collection.map(item => {
+    return item.length > 1 ? strToObj(item) : item;
+  });
 
-function choose_no_repeat_element(collection) {
-  var set = [];
-  for (var i = 0, lens = collection.length; i < lens; i++) {
-    var strLens = collection[i].length;
-    if (strLens > 1) {
-      var obj = strToObj(collection[i], strLens);
-      collection[i] = obj;
-      if (!isFind(obj.name, set)) {
-        set.push(obj.name);
-      }
+  let obj = arr.reduce((obj, item) => {
+    if (typeof (item) === 'object') {
+      item.name in obj ? obj[item.name] += item.count : obj[item.name] = item.count;
     } else {
-      if (!isFind(collection[i], set)) {
-        set.push(collection[i]);
-      }
+      item in obj ? obj[item]++ : obj[item] = 1;
     }
-  }
-  return set;
+    return obj;
+  }, {})
+
+  return objToArr(obj);
 }
 
-function isFind(element, set) {
-  var lens = set.length;
-  var flag = false;
-  for (var j = 0; j < lens; j++) {
-    if (element === set[j]) {
-      flag = true;
-      break;
-    }
-  }
-  return flag;
-}
-
-function strToObj(str, n) {
-  var obj = {
+function strToObj(str) {
+  let n = str.length;
+  let obj = {
     name: "",
     count: ""
   }
-  for (var j = 0; j < n; j++) {
+  for (let j = 0; j < n; j++) {
     if (str[j].charCodeAt() >= 97 && str[j].charCodeAt() <= 122
       || str[j].charCodeAt() >= 65 && str[j].charCodeAt() <= 90) {
       obj.name += str[j];
@@ -54,28 +35,16 @@ function strToObj(str, n) {
   return obj;
 }
 
-function getCount(set, collection) {
-  var result = [];
-  for (var i = 0, lens = set.length; i < lens; i++) {
-    var obj = {
-      name: set[i],
-      summary: 0,
-    }
-    for (var j = 0, collectionLens = collection.length; j < collectionLens; j++) {
-      if (typeof(collection[j]) === "object") {
-        if (collection[j].name === set[i]) {
-          obj.summary += collection[j].count;
-        }
-      } else {
-        if (collection[j] === set[i]) {
-          obj.summary++;
-        }
-      }
-    }
-    result.push(obj);
+function objToArr(obj) {
+  let result = [];
+  for (let i in obj) {
+    let o = {};
+    o.name = i;
+    o.summary = obj[i];
+    result.push(o);
   }
+
   return result;
 }
-
 
 module.exports = count_same_elements;
