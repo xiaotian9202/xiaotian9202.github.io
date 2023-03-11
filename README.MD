@@ -1,5 +1,5 @@
 ### personal blog
-- [personal blog](https://github.com/xiaotian9202/xiaotian9202.github.io/personal-blog/)
+- [personal blog](https://xiaotian9202.github.io/personal-blog/)
 
 
 ### Chapter 1
