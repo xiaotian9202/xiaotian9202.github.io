@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-html, body{
+html, body {
   width: 100%;
   height: 100%;
   display: flex;
@@ -15,14 +15,55 @@ html, body{
 
 .info-box {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   width: 400px;
   height: 400px;
   background-color: white;
   color: rgb(94, 104, 111);
-  box-shadow: 0px 0px 5px 0px #000;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+  font-family: "Gill Sans", sans-serif;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.close-button {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding: 5% 5% 5% 0;
+  box-sizing: border-box;
+}
+
+.close-icon:hover {
+  opacity: 1;
+}
+
+.close-icon:before {
+  content: '\2716';
+}
+
+.close-icon:after {
+  transform: rotate(45deg);
 }
 
 .user-info {
@@ -33,18 +74,18 @@ html, body{
   align-items: center;
 }
 
-.round-icon{
+.round-icon {
   width: 25%;
-  height: 25%;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
-h2 {
-  padding: 5px;
+.user-info > h2 {
+  padding: 15px 0 5px 0;
 }
 
-p {
+.user-info > p {
   padding: 5px;
+  text-align: center;
 }
 
 .icons {
@@ -58,6 +99,10 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.close-button > a {
+  text-decoration: none;
 }
 
 .icon {
