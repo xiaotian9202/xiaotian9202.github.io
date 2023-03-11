@@ -1,3 +1,3 @@
-Thoughtworks Group Task
+Thoughtworks Task
 
-Team Tfour
+personal blog
